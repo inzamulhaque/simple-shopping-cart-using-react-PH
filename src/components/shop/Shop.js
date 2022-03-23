@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Cart from '../cart/Cart';
 import Product from '../product/Product';
 import './shop.css';
 
@@ -22,9 +23,8 @@ const Shop = () => {
                     products.map(product => <Product handleClick={handleAddToCart} product={product} key={product.id} />)
                 }
             </div>
-            <div className="cart container">
-                <h1>Order Summary</h1>
-                Selected Items: {cart.length}
+            <div className="cartContainer">
+                <Cart cart={cart} />
             </div>
         </div>
     );
